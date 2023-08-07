@@ -1,2 +1,1 @@
-# Go_learning_paths
-Go Go 
+# Go Learning Paths
