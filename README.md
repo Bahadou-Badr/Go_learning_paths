@@ -1,7 +1,7 @@
 # Go Learning Paths
 ## Working with primitive data type
 - Declaring Variables
-```
+```go
 var a int
 a = 42
 fmt.Println(a)
