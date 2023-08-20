@@ -64,7 +64,7 @@ func main() {
 - Declaring array
 
 ```go
-    //declaring array with assigned values (3 ways)
+    //declaring array with assigned values (3 ways) 
 	var ages [3]int = [3]int{20, 30, 40}
     var ages = [3]int{20, 30, 40}
     ages := [3]int{20, 30, 40}
