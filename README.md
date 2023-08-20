@@ -60,3 +60,21 @@ func main() {
 	fmt.Println("my first name is", firstName)
 }
 ```
+## Array
+- Declaring array
+
+```go
+    //declaring array with assigned values (3 ways)
+	var ages [3]int = [3]int{20, 30, 40}
+    var ages = [3]int{20, 30, 40}
+    ages := [3]int{20, 30, 40}
+	
+    //declaring array 
+	//then assigned values
+    ages := [3]int{}
+    ages[0] = 25
+    ages[1] = 35
+    ages[2] = 45
+	
+    fmt.Println(ages)
+```
