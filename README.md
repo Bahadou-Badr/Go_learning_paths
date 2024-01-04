@@ -112,3 +112,5 @@ Fixed length, Same type, Indexable, and Contiguous in memory.
     fmt.Println(rangeThree) // output : [20 35 40]
 	
 ```
+## Structs
+You can think of structs as a way to define your own type
