@@ -1,4 +1,14 @@
 # Go Learning Paths
+## Some Infos About Go
+
+
+- The Default Value of all int, float, and rune is `0`
+- The default value of strings is an empty  string `''`
+- The default value of a boolean is `false`
+- The default value of errors is nil
+---------------------------------------------------
+- when declaring constants we have to initialize a value
+  
 ## Working with primitive data type
 - Declaring Variables
 ```go
@@ -61,6 +71,8 @@ func main() {
 }
 ```
 ## Arrays
+Fixed length, Same type, Indexable, and Contiguous in memory. 
+
 - Declaring array and assigned values
 
 ```go
