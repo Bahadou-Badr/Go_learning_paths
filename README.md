@@ -5,7 +5,7 @@
 - The Default Value of all int, float, and rune is `0`
 - The default value of strings is an empty  string `''`
 - The default value of a boolean is `false`
-- The default value of errors is nil
+- The default value of errors is `nil`
 ---------------------------------------------------
 - when declaring constants we have to initialize a value
   
