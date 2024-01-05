@@ -122,13 +122,20 @@ type gasEngine struct{
 	gallons uint8
 }
 
+// [2] Create a function which is directly tied to the struct instance itself 
+func (e gasEngine) milesLift() uint8 {
+	return e.gallons * e.mpg
+}
+
 func main() {
-	// Create a variable with gasEngine type
+	// [1] Create a variable with gasEngine type
 	var myEngine gasEngine
 	var myEngine gasEngine = gasEngine{25, 15}
 	myEngine.mpg = 20
 	fmt.Println(myEngine.mpg, myEngine.gallons)
 
-
+	// [2]
+	var myEngine gasEngine = gasEngine{25, 15}
+	fmt.Printf("Total miles lift in tank : %v", myEngine.milesLift())
 }
 ```
