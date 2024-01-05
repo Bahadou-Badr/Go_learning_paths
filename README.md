@@ -114,3 +114,21 @@ Fixed length, Same type, Indexable, and Contiguous in memory.
 ```
 ## Structs
 You can think of structs as a way to define your own type
+```go
+
+// Create a struct, struct can hold mixed type
+type gasEngine struct{
+	mpg uint8
+	gallons uint8
+}
+
+func main() {
+	// Create a variable with gasEngine type
+	var myEngine gasEngine
+	var myEngine gasEngine = gasEngine{25, 15}
+	myEngine.mpg = 20
+	fmt.Println(myEngine.mpg, myEngine.gallons)
+
+
+}
+```
