@@ -167,3 +167,57 @@ func main() {
 	fmt.Printf("Total miles lift in tank : %v", myEngine.milesLift())
 }
 ```
+---------------------------------------------------
+---------------------------------------------------
+# Web Application:
+- Module Paths for Downloadable Packages
+If you’re creating a package or application which can be downloaded and
+used by other people and programs, then it’s good practice for your
+module path to equal the location that the code can be downloaded
+from.
+For instance, if your package is hosted at https://github.com/foo/bar
+then the module path for the project should be github.com/foo/bar.
+
+### Web Application Basics
+Now that everything is set up correctly let’s make the first iteration of our
+web application. We’ll begin with the three absolute essentials:
+-The first thing we need is a handler. If you’re coming from an MVC-
+background, you can think of handlers as being a bit like controllers.
+They’re responsible for executing your application logic and for
+writing HTTP response headers and bodies.
+-The second component is a router (or servemux in Go terminology).
+This stores a mapping between the URL patterns for your application
+and the corresponding handlers. Usually you have one servemux for
+your application containing all your routes.
+-The last thing we need is a web server. One of the great things about
+Go is that you can establish a web server and listen for incoming
+requests as part of your application itself. You don’t need an external
+third-party server like Nginx or Apache.
+Let’s put these components together in the main.go file to make a
+working application.
+
+```go
+package main
+import (
+"log"
+"net/http"
+)
+// Define a home handler function which writes a byte slice containing
+// "Hello from Snippetbox" as the response body.
+func home(w http.ResponseWriter, r *http.Request) {
+w.Write([]byte("Hello from Snippetbox"))
+}
+func main() {
+// Use the http.NewServeMux() function to initialize a new servemux, then
+// register the home function as the handler for the "/" URL pattern.
+mux := http.NewServeMux()
+mux.HandleFunc("/", home)
+// Use the http.ListenAndServe() function to start a new web server. We pas
+// two parameters: the TCP network address to listen on (in this case ":4000
+// and the servemux we just created. If http.ListenAndServe() returns an er
+// we use the log.Fatal() function to log the error message and exit.
+log.Println("Starting server on :4000")
+err := http.ListenAndServe(":4000", mux)
+log.Fatal(err)
+}
+```
